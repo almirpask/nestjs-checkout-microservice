@@ -41,7 +41,9 @@ export class Checkout {
   @CreateDateColumn()
   created_at: Date;
 
-  @OneToMany(() => CheckoutItem, (item) => item.checkout)
+  @OneToMany(() => CheckoutItem, (item) => item.checkout, {
+    cascade: ['insert'],
+  })
   items: CheckoutItem[];
   static create(input: CreateCheckoutCommand) {
     const checkout = new Checkout();
@@ -97,6 +99,8 @@ export class CheckoutItem {
   @ManyToOne(() => Checkout)
   checkout: Checkout;
 
-  @ManyToOne(() => CheckoutProduct)
+  @ManyToOne(() => CheckoutProduct, {
+    cascade: ['insert'],
+  })
   product: CheckoutProduct;
 }
