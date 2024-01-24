@@ -1,9 +1,10 @@
 FROM node:18
 
+RUN npm install -g @nestjs/cli
 
 WORKDIR /app
 
 
-COPY . /app
+COPY . .
 
-RUN chmod +x /entrypoint.sh
+RUN chmod +x ./entrypoint.sh

@@ -8,5 +8,4 @@ services:
       - 3000:3000
     volumes:
       - .:/app
-    # command: npm run start:dev
-    entrypoint: ./entrypoint.sh
+    command: ./entrypoint.sh
