@@ -5,7 +5,7 @@ import { Module, Global } from '@nestjs/common';
 @Module({
   imports: [
     RabbitMQModule.forRoot(RabbitMQModule, {
-      uri: 'amqp://rabbitmq:rabbitmq@rabbitmq:5672',
+      uri: 'amqp://admin:admin@rabbitmq:5672',
     }),
   ],
   exports: [RabbitMQModule],
