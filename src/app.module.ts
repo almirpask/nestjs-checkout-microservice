@@ -8,6 +8,7 @@ import {
   CheckoutItem,
   CheckoutProduct,
 } from './checkouts/entities/checkout.entity';
+import { RabbitmqModule } from './rabbitmq/rabbitmq.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import {
       logging: true,
     }),
     CheckoutsModule,
+    RabbitmqModule,
   ],
   controllers: [AppController],
   providers: [AppService],
